@@ -29,15 +29,7 @@ class ReceiveSharingIntent {
         .map<SharedMediaFile>((file) => SharedMediaFile.fromJson(file))
         .toList();
   }
-
-  /// Returns a [Future], which completes to one of the following:
-  ///
-  ///   * the initially stored link (possibly null), on successful invocation;
-  ///   * a [PlatformException], if the invocation failed in the platform plugin.
-  static Future<String?> getInitialText() async {
-    return await _mChannel.invokeMethod('getInitialText');
-  }
-
+ 
   /// A convenience method that returns the initially stored link
   /// as a new [Uri] object.
   ///
