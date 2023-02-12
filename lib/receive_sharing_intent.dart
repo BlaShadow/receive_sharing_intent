@@ -29,17 +29,6 @@ class ReceiveSharingIntent {
         .map<SharedMediaFile>((file) => SharedMediaFile.fromJson(file))
         .toList();
   }
- 
-  /// A convenience method that returns the initially stored link
-  /// as a new [Uri] object.
-  ///
-  /// If the link is not valid as a URI or URI reference,
-  /// a [FormatException] is thrown.
-  static Future<Uri?> getInitialTextAsUri() async {
-    final data = await getInitialText();
-    if (data == null) return null;
-    return Uri.parse(data);
-  }
 
   /// Sets up a broadcast stream for receiving incoming media share change events.
   ///
